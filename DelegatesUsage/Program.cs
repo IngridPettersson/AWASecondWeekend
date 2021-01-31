@@ -15,12 +15,24 @@ namespace DelegatesUsage
                 new Employee {ID = 101, Name = "Troj", Salary = 3000, Experience = 3}
             };
 
-            Employee.PromoteEmployee(empList);
+            IsPromotable delIsPromotable = new IsPromotable(Promote);
+
+            Employee.PromoteEmployee(empList, delIsPromotable);
+        }
+
+        public static bool Promote(Employee emp)
+        {
+            if (emp.Experience >= 5)
+                return true;
+            else
+                return false;
         }
     }
 
     // If we want this Employee-class to be reusable we cannot have any non-dynamic logic put in to it. An employer might want to promote their employee based on salary + experience, 
     // or only experience or only salary and what not. That is where the usage of delegates come in.
+
+    delegate bool IsPromotable(Employee empl);
     class Employee
     {
         public int ID { get; set; }
@@ -29,11 +41,11 @@ namespace DelegatesUsage
         public int Experience { get; set; }
 
 
-        public static void PromoteEmployee(List<Employee> employeeList)
+        public static void PromoteEmployee(List<Employee> employeeList, IsPromotable IsEligibleToPromote)
         {
             foreach (Employee employee in employeeList)
             {
-                if (employee.Experience >= 5)
+                if (IsEligibleToPromote(employee))
                     Console.WriteLine($"{employee.Name} promoted");
 
             }
