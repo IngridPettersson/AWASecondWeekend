@@ -14,9 +14,13 @@ namespace DelegatesUsage
                 new Employee {ID = 101, Name = "Strumpan", Salary = 6000, Experience = 6},
                 new Employee {ID = 101, Name = "Troj", Salary = 3000, Experience = 3}
             };
+
+            Employee.PromoteEmployee(empList);
         }
     }
 
+    // If we want this Employee-class to be reusable we cannot have any non-dynamic logic put in to it. An employer might want to promote their employee based on salary + experience, 
+    // or only experience or only salary and what not. That is where the usage of delegates come in.
     class Employee
     {
         public int ID { get; set; }
@@ -25,7 +29,7 @@ namespace DelegatesUsage
         public int Experience { get; set; }
 
 
-        public void PromoteEmployee(List<Employee> employeeList)
+        public static void PromoteEmployee(List<Employee> employeeList)
         {
             foreach (Employee employee in employeeList)
             {
