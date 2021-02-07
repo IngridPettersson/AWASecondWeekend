@@ -25,6 +25,11 @@ namespace DelegatesUsage
             Employee.PromoteEmployee(empList, delIsPromotable);
         }
 
+        // I den här metoden nedan, som ligger i Program class, som vår delegate delIsPromotable pekar på, skriver vi in logiken - alltså baserat på vad vill vi promote
+        // våra anställda... på så vis hamnar all logik utanför Employee class och Employee class blr då reusable för end user. De kan hämta klassen och sedan
+        // bara skriva in sin egen logik i metoden Promote här i Program. När de anropar metoden PromoteEmployee med vår delegate 
+        // delIsPromotable som argument (se ovan) så kommer samma metod anropas men GÖRA OLIKA SAKER BEROENDE PÅ LOGIKEN SOM ÄR DEFINIERAD I METODEN Promote() 
+        // - kraftfullt!
         public static bool Promote(Employee emp)
         {
             if (emp.Experience >= 5)
