@@ -14,7 +14,7 @@ namespace DelegatesPractice
 
         public override void DoYourThing()
         {
-            Console.WriteLine("Saying \"Nej! Ennia!\"");
+            Console.WriteLine($"{Name} doing her thing: Saying \"Nej! Ennia!\"");
         }
     }
 }

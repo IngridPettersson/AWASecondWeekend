@@ -24,14 +24,14 @@ namespace DelegatesPractice
 
         }
 
-        public static void WillDoYourThing(List<CrewMember> crewMembers, delWillDoYourThing instance)
+        public static void WillDoYourThing(List<CrewMember> crewMembers, delWillDoYourThing delArgWillDoYourThing)
         {
             foreach (CrewMember crewMember in crewMembers)
             {
-                if (instance(crewMember))
-                    Console.WriteLine("");
+                if (delArgWillDoYourThing(crewMember))
+                    crewMember.DoYourThing();
                 else
-                    Console.WriteLine("");
+                    Console.WriteLine($"{crewMember.Name} is not in the mood...");
 
             }
 

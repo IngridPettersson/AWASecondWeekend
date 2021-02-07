@@ -13,7 +13,7 @@ namespace DelegatesPractice
 
         public override void DoYourThing()
         {
-            Console.WriteLine("Playing the guitar...");
+            Console.WriteLine($"{Name} doing his thing: Playing the guitar...");
         }
     }
 }
