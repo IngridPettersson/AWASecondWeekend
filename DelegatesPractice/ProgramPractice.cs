@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace DelegatesPractice
 {
+
+    // I practice delegates and inheritance with virtual/override methods in this project.
     class ProgramPractice
     {
         
