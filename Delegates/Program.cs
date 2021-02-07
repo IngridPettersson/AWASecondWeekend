@@ -7,7 +7,7 @@ namespace Delegates
     // This delegate, as it's written below, can point to ANY method that takes a string parameter and has a void return type.
     // More generally described, the signature of a delegate must match the method in terms of parameters and return type. This signature of the delegate also very much 
     // resembles the signature of a method. (AND note that here we are declaring the delegate, even though it looks as if we were calling it. So in that sense, I might
-    // think of the delegate syntax almost as a variable syntax here.)
+    // think of the delegate syntax almost as a variable syntax here, OR as the signature of an abstract method now that I've learned more :))
 
     public delegate void WriteMessageDelegate(string DelegateMessage);
 
